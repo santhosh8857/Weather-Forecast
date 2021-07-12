@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Weather Forecast</title>
+   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+   
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+   <style>
+      /* Background image */
+      .rain {
+         background: url('./img/rain.jpg') no-repeat center center/cover;
+      }
+      .haze {
+         background: url('./img/haze.jpg') no-repeat center center/cover;
+      }
+      .strom {
+         background: url('./img/strom.jpg') no-repeat center center/cover;
+      }
+      .snow {
+         background: url('./img/snow.jpg') no-repeat center center/cover;
+      }
+      .drizzle {
+         background: url('./img/drizzle.jpg') no-repeat center center/cover;
+      }
+      .cloud {
+         background: url('./img/clould.jpg') no-repeat center center/cover;
+      }
+
+      /* Opacity */
+      .trans {
+         opacity: 0.6;
+      }
+      .trans1 {
+         opacity: 0.7;
+      }
+   </style>
+   
+</head>
+<body>
+   <div class="container">
+      <div class="row">
+         <div class="col-2"></div>
+         <div class="col-8 mt-5">
+            <div class="row" id="main-bg">
+               <div class="col-4">
+                  <!-- Input field search -->
+                  <form>
+                     <div class="input-group mt-5 trans1">
+                        <span class="input-group-text"><button id="btn" class="btn p-1"><i class="fas fa-search"></i></button></span>
+                        <input type="text" id="search" class="form-control" placeholder="Search for city name">
+                      </div>
+                  </form>
+
+                  <!-- Current Icon -->
+                  <div class="text-center my-4" id="icon"></div>
+
+                  <!-- Current Weather -->
+                  <div id="weather" class="mb-2 text-center text-light"></div>
+
+                  <!-- Degree -->
+                  <div class="display-3 text-center text-light" id="degree"></div>
+
+                  <!-- City -->
+                  <div>
+                     <p id="city" class="p-3 border border-white text-center rounded text-light"></p>
+                  </div>
+               </div>
+               <div class="col-8">
+                 <div class="d-flex mt-5">
+                  <!-- Sunrise and Sunset -->
+                  <div class="card m-3 trans" style="width: 45%">
+                     <div class="card-body">
+                        <div class="text-center">
+                           <h5 class="card-title text-center">SUNRISE & SUNSET </h5>
+                           <p class="card-text fw-bold" id="sunrise"></p>
+                           <p class="card-text fw-bold" id="sunset"></p>
+                        </div>
+                     </div>
+                   </div>
+
+                  <!-- Wind -->
+                  <div class="card m-3  trans" style="width: 45%" >
+                     <div class="card-body">
+                        <div class="text-center">
+                           <h5 class="card-title">WIND <i class="fas fa-wind"></i></h5>
+                           <p class="card-text fw-bold mt-4" id="wind"></p>
+                        </div>
+                     </div>
+                   </div>
+                 </div> 
+                 <div>
+                  <div class="card m-5  trans" style="width: 75%" id="others">
+                     <div class="card-body">
+                        <!-- Humidity and Pressure -->
+                        <div class="d-flex">
+                           <div class="m-3 text-center" style="width: 40%">
+                              <h5 class="card-title">HUMIDITY <i class="fas fa-tint"></i> </h5>
+                              <p class="card-text fw-bold" id=humidity></p>
+                           </div>
+                           <div class="m-3 text-center" style="width: 40%">
+                              <h5 class="card-title">PRESSURE <i class="fas fa-thermometer-half"></i></h5>
+                              <p class="card-text fw-bold" id="pressure"></p>
+                           </div>
+                        </div>
+                        <!-- Visibility -->
+                        <div class="m-3 text-center">
+                           <h5 class="card-title">VISIBILITY <i class="far fa-eye"></i></h5>
+                           <p class="card-text fw-bold" id="visibility"></p>
+                        </div>
+                     </div>
+                   </div>
+                 </div>
+               </div>
+            </div>
+         </div>
+         <div class="col-2"></div>
+      </div>
+   </div>
+   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+   <script src="script.js"></script>
+</body>
+</html>
